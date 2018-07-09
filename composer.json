@@ -1,0 +1,28 @@
+{
+    "name": "jet-snowman/yii2-daemon",
+    "description": "Extension provides functionality for simple daemons creation and control",
+    "type": "yii2-extension",
+    "version": "1.0.0",
+    "keywords": [
+        "yii2",
+        "extension",
+        "daemon"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Jet-snowman",
+            "email": "jet-snegovik@yandex.ru"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "ext-pcntl": "*",
+        "ext-posix": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "jet-snowman\\daemon\\": ""
+        }
+    }
+}
