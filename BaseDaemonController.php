@@ -1,6 +1,6 @@
 <?php
 
-namespace briteside\daemon;
+namespace jetSnowman\daemon;
 
 use briteside\log\ConsoleTarget;
 use yii\base\NotSupportedException;
