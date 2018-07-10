@@ -1,8 +1,8 @@
 <?php
 
-namespace briteside\daemon\controllers;
+namespace jetSnowman\daemon\controllers;
 
-use briteside\daemon\BaseDaemonController;
+use jetSnowman\daemon\BaseDaemonController;
 use Yii;
 
 /**
@@ -17,7 +17,7 @@ abstract class WatcherBaseDaemonController extends BaseDaemonController {
         $watcherName = $this->getProcessName(FALSE);
         $instances = $this->getLaunched(['daemon' => $watcherName]);
         if (count($instances) > 1) {
-            Yii::trace('Watcher is already running');
+            Yii::debug('Watcher is already running');
             parent::$stopFlag = TRUE;
         }
     }

@@ -6,9 +6,9 @@
  * Time: 4:01 PM
  */
 
-namespace briteside\daemon\controllers;
+namespace jetSnowman\daemon\controllers;
 
-use briteside\daemon\BaseDaemonController;
+use jetSnowman\daemon\BaseDaemonController;
 use PhpAmqpLib\Channel\AMQPChannel;
 use PhpAmqpLib\Exception\AMQPRuntimeException;
 use PhpAmqpLib\Exception\AMQPTimeoutException;
@@ -48,21 +48,21 @@ abstract class RabbitMQBaseDaemonController extends BaseDaemonController {
         /* @var AMQPChannel $channel */
         $channel = NULL;
         try {
-            Yii::trace('Opening a channel');
+            Yii::debug('Opening a channel');
             $channel = $this->getChannel();
             //bind queue with method
             $channel->basic_consume($this->queue, '', FALSE, FALSE, FALSE, FALSE, [$this, 'acceptMessage']);
-            Yii::trace('waiting for a task');
+            Yii::debug('waiting for a task');
             $channel->wait(NULL, TRUE, 5);
         } catch (AMQPTimeoutException $e) {
             //ignore
         } catch (AMQPRuntimeException $e) {
-            Yii::trace('AMQP Runtime Exception: ' . $e->getMessage());
+            Yii::debug('AMQP Runtime Exception: ' . $e->getMessage());
         } catch (\Exception $e) {
             Yii::error('AMQP Exception: ' . $e->getMessage());
         } finally {
             if ($channel) {
-                Yii::trace('A channel was closed');
+                Yii::debug('A channel was closed');
                 $channel->close();
             }
         }

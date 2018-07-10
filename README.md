@@ -68,4 +68,13 @@ The base class is located - jet-snowman\daemon\controllers\RabbitMQBaseDaemonCon
 3. getChannel() - you have to return a channel
 4. handleMessage($message) - yo have to handle your task
 
-The message is ab instance of \PhpAmqpLib\Message\AMQPMessage. The handleMessage calls every time when rabbit sends a task to a worker. Only one task can be handled in one iteration.
+The message is an instance of \PhpAmqpLib\Message\AMQPMessage. The handleMessage calls every time when rabbit sends a task to a worker. Only one task can be handled in one iteration.
+
+Sqs Base Daemon
+___________________________
+
+The base class is located - jet-snowman\daemon\controllers\SqsBaseDaemonController and you have the following methods
+1. initModule() - you have to set your queue name.
+2. handleMessage($message) - yo have to handle your task
+
+The message is an instance of Array. The handleMessage calls every time when a worker gets a new response. If response has more than 1 message then it will be called multiple times for one iteration.
