@@ -2,7 +2,7 @@
 
 namespace jetSnowman\daemon;
 
-use briteside\log\ConsoleTarget;
+use jetSnowman\consoleLog\ConsoleTarget;
 use yii\base\NotSupportedException;
 use yii\console\Controller;
 use yii\console\ExitCode;
@@ -92,10 +92,10 @@ abstract class BaseDaemonController extends Controller {
         parent::init();
 
         //set PCNTL signal handlers
-        pcntl_signal(SIGTERM, ['briteside\daemon\BaseDaemonController', 'signalHandler']);
-        pcntl_signal(SIGINT, ['briteside\daemon\BaseDaemonController', 'signalHandler']);
-        pcntl_signal(SIGHUP, ['briteside\daemon\BaseDaemonController', 'signalHandler']);
-        pcntl_signal(SIGUSR1, ['briteside\daemon\BaseDaemonController', 'signalHandler']);
+        pcntl_signal(SIGTERM, ['jetSnowman\daemon\BaseDaemonController', 'signalHandler']);
+        pcntl_signal(SIGINT, ['jetSnowman\daemon\BaseDaemonController', 'signalHandler']);
+        pcntl_signal(SIGHUP, ['jetSnowman\daemon\BaseDaemonController', 'signalHandler']);
+        pcntl_signal(SIGUSR1, ['jetSnowman\daemon\BaseDaemonController', 'signalHandler']);
     }
 
     /**

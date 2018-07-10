@@ -2,7 +2,7 @@
     "name": "jet-snowman/yii2-daemon",
     "description": "Extension provides functionality for simple daemons creation and control",
     "type": "yii2-extension",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "keywords": [
         "yii2",
         "extension",
@@ -18,7 +18,8 @@
     "require": {
         "yiisoft/yii2": "*",
         "ext-pcntl": "*",
-        "ext-posix": "*"
+        "ext-posix": "*",
+        "jet-snowman/yii2-consolelog": "dev-master"
     },
     "autoload": {
         "psr-4": {
