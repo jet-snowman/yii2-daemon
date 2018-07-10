@@ -2,7 +2,7 @@
     "name": "jet-snowman/yii2-daemon",
     "description": "Extension provides functionality for simple daemons creation and control",
     "type": "yii2-extension",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "keywords": [
         "yii2",
         "extension",
