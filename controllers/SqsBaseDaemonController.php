@@ -6,7 +6,7 @@
  * Time: 4:01 PM
  */
 
-namespace console\modules\daemons;
+namespace jetSnowman\daemon\controllers;
 
 use jetSnowman\daemon\BaseDaemonController;
 use Yii;
